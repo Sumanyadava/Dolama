@@ -1,0 +1,91 @@
+<?php
+include 'dbcon.php';
+$fname='fname ';
+
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing in </title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <div class="home"><a href="./index.html">Home</a></div>
+    <form action="register.php" method="post" onsubmit="return validate()">
+        <div class="mian">
+            <div class="one"></div>
+            <div class="two">
+                <div class="of">
+                    <h1>Welcome Folk</h1>
+                    <p>Welcome to my website .plese register so you can use website freely.</p>
+                </div>
+                <div class="tex">
+                    <div class="n" >
+                        <div>First Name</div>
+                        <input type="text" name="fname" required id="fname">
+                    </div>
+                    <div class="n">
+                        <div>Last Name</div>
+                        <input type="text" name="lname" required id="lname">
+                    </div>
+                    <div class="n">
+                        <div>Email Address</div>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="n">
+                        <div>Phone no</div>
+                        <input type="number" id="pnoo" name="pno" required>
+                    </div>
+                    <div class="n">
+                        <div>Password</div>
+                        <input type="password" name="pass" id="pass" required>
+                    </div>
+                    <input type="reset" id="reset">
+                    <input type="submit" name="submit" id="submit">
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <?php
+        if (isset($_POST['submit'])) {
+
+            $fname=$_POST['fname'];
+            $lname=$_POST['lname'];
+            $email=$_POST['email'];
+            $pno=$_POST['pno'];
+            $pass=$_POST['pass'];
+
+            $req= mysqli_query($conn,"INSERT INTO rage (fname, lname, email, phone,pass) VALUES ('$fname', '$lname', '$email', '$pno', '$pass')");
+        }
+    ?>
+
+    <script>
+
+        function validate() {
+            // alert("asdsda")
+            let x = document.getElementById("pnoo").value;
+            if (x.length != 10 ) {
+                alert("write 10 digits");
+                return false;
+            }
+
+            let y = document.getElementById("pass").value;
+            if (y.length <= 5) {   
+                alert("at write 5 letters");
+                return false;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

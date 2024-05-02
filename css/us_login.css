@@ -1,0 +1,211 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: rgba(35, 37, 52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card{
+    height: 80%;
+    width: 40%;
+    background-color: rgb(17, 19, 29);
+    /* border: solid 3px; */
+    padding: 3px;
+    border-radius: 10px;
+    color: rgba(0, 255, 255, 0);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card:hover{
+    /* color: aqua; */
+    color: aliceblue;
+    transition: 3s;
+}
+.card:hover:before,.card:hover:after{
+    opacity: 0;
+    animation: none;
+}
+.card>form{
+    display: none;
+}
+.card:hover>form{
+    display: block;
+}
+.card::before{
+    content: "";
+    width: 102%;
+    height: 102%;
+    border-radius: 8px;
+    position: absolute;
+    z-index: -1;
+    top: -1;
+    left: -5;
+    transition: ease .5s;
+    background-image: linear-gradient(var(--rotate),rgb(102, 255, 0),rgb(0, 183, 255),rgb(251, 255, 0));
+    animation: spin 2.5s linear  infinite ;
+}
+.card::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(var(--rotate),red,rgb(0, 68, 255),rgb(0, 255, 0));
+    filter: blur(55px);
+    z-index: -1;
+    animation: spin 2.5s linear  infinite  ;
+    transition: ease 2s;
+}
+@keyframes spin {
+    0%{
+        --rotate: 0deg;
+    }
+    100%{
+        --rotate: 360deg;
+    }
+}
+.user{
+    /* border: solid wheat; */
+    height: 150px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    transform: translateY(50px);
+    letter-spacing: 5px;
+
+}
+.Password{
+    /* border: solid wheat; */
+    height: 150px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    flex-direction: column;
+    transform: translateY(50px);
+    letter-spacing: 5px;
+
+}
+h1{
+    /* border: solid whitesmoke; */
+    height: 100px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    position: relative;
+    top: -50px;
+    /* background-color: rgb(64, 131, 255); */
+    
+}
+p{
+    /* border: solid white; */
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content:end;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    top: 20px;
+    /* color: aliceblue; */
+
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-50px);
+    /* border: solid wheat; */
+    
+}
+input{
+    height: 50px;
+    border-radius: 20px;
+   
+    width: 90%;
+    /* border: none; */
+    background-color: rgb(17, 19, 29);
+    color: white;
+}
+.user>div{
+    font-size: 30px;
+    font-family: sans-serif;
+    color: rgb(137, 255, 255);
+    
+}
+.Password>div{
+    font-size: 30px;
+    font-family: sans-serif;
+    color: rgb(132, 255, 255);
+}
+.button{
+    height: 50px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    background-color: aliceblue;
+    text-decoration: none;
+    transform: translate(150px,100px);
+}
+.forgor{
+    transform: translate(210px,120px);
+    
+}
+.forgor>a{
+    color: aqua;
+    letter-spacing: 5px;
+    text-decoration: none;
+    text-transform: capitalize;
+    
+}
+a:active{
+    color: red;
+}
+
+@media all and (min-width: 992px) {
+    h1{
+        /* border: solid whitesmoke; */
+        height: 100px;
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+        /* position: relative;
+        top: -50px; */
+        /* background-color: rgb(64, 131, 255); */
+        
+    }
+    p{
+        /* border: solid white; */
+        font-size: 20px;
+        width: 100%;
+        display: flex;
+        justify-content:end;
+        font-family: 'Courier New', Courier, monospace;
+        position: relative;
+        top: 20px;
+        /* color: aliceblue; */
+    
+    }
+}

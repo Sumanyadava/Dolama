@@ -1,0 +1,61 @@
+<?php
+
+include 'dbcon.php';
+// mysqli_select_db($con,$db);
+// if (isset($_POST['username'])) {
+//     $uname=$_POST['username'];
+//     $password=$_POST['password'];
+//     $sql="select * from rage where username= '".$uname."' AND password ='".$password."' limit 1  ";
+
+//     $result=mysqli_query($con,$sql);
+//     if (mysqli_num_rows($result)==1) {
+//         header('location:studenthome.php');
+//         exit();
+//     }else{
+//         echo"You are not authorised";
+//         exit();
+//     }
+// }
+//  var_dump $conn;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login please </title>
+    <link rel="stylesheet" href="../css/us_login.css">
+</head>
+<body>
+    <div class="card">
+        
+        <form method="POST" >
+            <h1>LOGIN</h1>
+            <p>Please Login To Use This Website</p>
+            <div class="user"><div>User name</div>
+                <input type="email" name="email" placeholder="email address">
+            </div>
+            <div class="Password"> <div>Password</div>
+                <input type="text" name="password" placeholder="Password">
+            </div>
+            <input type="submit" name="submit" class="button">
+            <div class="forgor"><a href="./index.html">Go back to Home</a></div>
+        </form>
+        <!-- <?php
+            /*if (isset($_POST['submit'])) {
+                $email=$_POST['email'];
+                $password=$_POST['password'];
+                $sql="SELECT * FROM rage WHERE email='$email' ";
+                $result=mysqli_query($conn,$sql);
+                if (mysqli_num_rows($result)>0) {
+                    header('location:studenthome.php');
+                }else{
+                    echo"You are not authorised";
+                }
+            }*/
+        ?> -->
+    </div>
+    <script src="https://kit.fontawesome.com/b750d88875.js" crossorigin="anonymous"></script>
+</body>
+</html>
